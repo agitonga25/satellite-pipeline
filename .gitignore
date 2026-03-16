@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data - never commit real API responses or extracted data
+data/real/
+data/raw/
+*.csv
+*.json
+!data/*_dummy.csv
+!data/*_dummy.json
+
+# Results
+results/*.png
+results/*.pdf
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Env vars
+.env
+secrets.yaml
