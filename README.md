@@ -1,6 +1,6 @@
 # Satellite Cloud Cover Analysis — Ghana 2023
 
-> **Group Project** | Python 3.10+ | Private Repository
+> **Scientific Python Project** | Python 3.10+ | Private Repository
 
 ## Learning Context
 
