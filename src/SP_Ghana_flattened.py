@@ -75,32 +75,28 @@ class Items:
             print(f"Key '{record_path}' not found. Returning empty DataFrame.")
             return pd.DataFrame()
         
-#%%Testing API call and intializatioin of class
-
-bbox = "-3.24437008301, 4.71046214438, 1.0601216976, 11.0983409693" #Ghana
-fields = [
-    'properties.eo:cloud_cover',
-    'properties.datetime',
-    'geometry.coordinates',
-    'properties.platform',
-    'id'
+#%% Testing API call and initialisation of class
+if __name__ == "__main__":
+    # Example usage / smoke test — runs only when this file is executed directly,
+    # not when imported by the analysis notebook.
+    bbox = "-3.24437008301, 4.71046214438, 1.0601216976, 11.0983409693"  # Ghana
+    fields = [
+        'properties.eo:cloud_cover',
+        'properties.datetime',
+        'geometry.coordinates',
+        'properties.platform',
+        'id'
     ]
+    datetime = "2023-01-01T00:00:00Z/2023-12-31T23:59:59Z"
 
-datetime = "2022-01-01T00:00:00Z/2022-12-31T23:59:59Z"
+    # class instance
+    items = Items()
+    # get json version of data
+    json_items = items.get_data(bbox, fields, datetime)
+    # flattening response
+    flattened_df = items.flatten_data(json_items)
 
-#class instance
-items = Items()
-
-#get json version of data
-json_items= items.get_data(bbox, fields, datetime)
-
-#flattening response
-flattened_df = items.flatten_data(json_items) 
-   
-#checking response
-flattened_df.head()
-
-#checking length of response
-len(flattened_df)
-                
-print(flattened_df.head())
+    # checking response
+    print(flattened_df.head())
+    # checking length of response
+    print(len(flattened_df))
