@@ -1,10 +1,10 @@
 # Satellite Cloud Cover Analysis — Ghana 2023
 
-> **Scientific Python Project** | Python 3.10+ | Private Repository
+> **Scientific Python Project** | Python 3.10+ | Project-Based Learning, MSc DSAIS, Cranfield University
 
 ## Learning Context
 
-This project was completed as part of a **Project-Based Learning (PBL)** module — my first experience with the PBL methodology. Rather than following a prescribed set of instructions, the task required independently scoping the problem, identifying appropriate data sources, designing the pipeline architecture, and interpreting results to arrive at a meaningful conclusion.
+This project was completed as part of a **Project-Based Learning (PBL)** module — my first experience with the PBL methodology. Rather than following a prescribed set of instructions, the task required independently scoping the problem, identifying appropriate data sources, designing the pipeline architecture, and interpreting results to arrive at a meaningful conclusion. The core module  was co-developed in a group; pipeline extensions, EDA, analysis were individual work.
 
 The end-to-end nature of the work — from discovering the STAC API and understanding its response structure, to handling real-world data quality issues (null values from Sentinel-1a) and communicating findings — reflects the core philosophy of PBL: learning by doing on a problem with no single right answer.
 
@@ -51,7 +51,7 @@ A data pipeline for extracting and analysing cloud cover data from Landsat and S
 | Endpoint | `https://earth-search.aws.element84.com/v1/search` |
 | Auth | None (public API) |
 | Bounding box | Ghana: `-3.244, 4.710, 1.060, 11.098` |
-| Date range | 2023-01-01 to 2023-12-31 |
+| Date range | 2022-12-31 to 2024-01-02 (monthly windows; edges overlap adjacent years to guarantee full coverage of 2023)|
 | Limit per call | 350 |
 | Total records fetched | 4,442 |
 
