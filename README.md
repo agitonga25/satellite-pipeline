@@ -2,17 +2,22 @@
 
 > **Scientific Python Project** | Python 3.10+ | Project-Based Learning, MSc DSAIS, Cranfield University
 
-## Learning Context
+## Project Context
 
-This project was completed as part of a **Project-Based Learning (PBL)** module — my first experience with the PBL methodology. Rather than following a prescribed set of instructions, the task required independently scoping the problem, identifying appropriate data sources, designing the pipeline architecture, and interpreting results to arrive at a meaningful conclusion. The core module  was co-developed in a group; pipeline extensions, EDA, analysis were individual work.
+This project was completed as part of a **Project-Based Learning (PBL)** module — my first experience with PBL. Rather than following a prescribed set of instructions, the task required independently scoping the problem, identifying appropriate data sources, designing the pipeline architecture, and interpreting results to arrive at a meaningful conclusion. The core module  was co-developed in a group; pipeline extensions, EDA, and analysis were individual work.
 
 The end-to-end nature of the work — from discovering the STAC API and understanding its response structure, to handling real-world data quality issues (null values from Sentinel-1a) and communicating findings — reflects the core philosophy of PBL: learning by doing on a problem with no single right answer.
 
 ## Overview
+Satellite imagery plays an important role in environmental monitoring, agriculture, disaster response and infrastructure planning. Because cloud cover can significantly reduce the usability of images, understanding seasonal cloud patterns is essential when planning Earth observation activities. This project analyses cloud cover across Ghana to identify periods most suitable for satellite imaging.
 
-A data pipeline for extracting and analysing cloud cover data from Landsat and Sentinel satellite imagery over Ghana. The pipeline queries the [Element 84 Earth Search STAC API](https://earth-search.aws.element84.com/v1) via HTTP GET requests, flattens the nested JSON responses, and produces a clean tabular dataset for temporal analysis — to identify the optimal times for satellite imaging over Ghana.
+This project develops a Python-based data pipeline to retrieve, process and analyse cloud-cover observations from Landsat and Sentinel imagery over Ghana. Data are collected through the [Element 84 Earth Search STAC API](https://earth-search.aws.element84.com/v1) via HTTP GET requests, transformed from nested JSON into an analysis-ready dataset, and explored to identify seasonal imaging windows.
 
-**Key finding:** December is the best month for satellite imaging over Ghana (avg. cloud cover ~14%). Cloud cover exceeds 50% for most of the year, peaking in June–August (~80–85%).
+**Main findings:** 
+  - December recorded the lowest average cloud cover (~14%), making it the most favourable month for satellite imaging.
+  - Cloud cover exceeded 50% for much of the year.
+  - June–August experienced the highest average cloud cover (79–85%), making imagery acquisition less reliable.
+  - November–January provides the most suitable imaging window for Ghana. 
 
 ## Pipeline Architecture
 
