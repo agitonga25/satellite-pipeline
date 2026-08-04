@@ -83,10 +83,15 @@ This project develops a Python-based data pipeline to retrieve, process and anal
 | landsat-7 | 108 | |
 | sentinel-1a | 124 | ⚠️ All cloud cover values are NaN — excluded from analysis |
 
+
 ## Project Structure
 
-```
+```text
 satellite_pipeline/
+├── assets/
+│   ├── monthly_cloud_cover.png
+│   ├── platform_counts.png
+│   └── null_values.png
 ├── data/
 │   ├── ghana_cloud_cover_dummy.csv       # Synthetic dummy data (safe to commit)
 │   └── sample_api_response_dummy.json    # Sample raw API response structure
